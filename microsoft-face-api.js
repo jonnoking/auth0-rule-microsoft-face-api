@@ -41,6 +41,7 @@ function (user, context, callback) {
                // add Face API data to user profile
                 user.user_metadata = user.user_metadata || {};
                 user.user_metadata.faceAPI = face;
+                auth0.users.updateUserMetadata(user.user_id, user.user_metadata);
 
                 callback(null, user, context);
 
